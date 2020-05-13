@@ -11,7 +11,7 @@ import { setSearchField } from '../actions';
 //send in the functions controlling our actions
 const mapStateToProps = state => {
 	return {
-		searchField: state.searchRobots.searchField
+		searchField: state.searchField
 	}
 }
 
@@ -30,7 +30,6 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props.store.getState());
 		fetch('https://jsonplaceholder.typicode.com/users')
 		.then(response=> response.json())
 		.then(users => this.setState({ robots: users }));
